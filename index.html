@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 何欣兰的消消乐 💕</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 标题 -->
+        <div class="header">
+            <h1>💕 何欣兰的消消乐 💕</h1>
+            <p class="subtitle">为你设计的游戏 · 打开就能玩</p>
+        </div>
+
+        <!-- 游戏信息 -->
+        <div class="game-info">
+            <div class="info-item">
+                <span class="label">第 <span id="level">1</span> 关</span>
+                <span class="value" id="levelDisplay">1</span>
+            </div>
+            <div class="info-item">
+                <span class="label">得分</span>
+                <span class="value" id="score">0</span>
+            </div>
+            <div class="info-item">
+                <span class="label">目标</span>
+                <span class="value" id="target">500</span>
+            </div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="progressPercent">0%</span>
+            </div>
+        </div>
+
+        <!-- 游戏板 -->
+        <div class="game-board" id="gameBoard"></div>
+
+        <!-- 情话区域 -->
+        <div class="romantic-section">
+            <div class="romantic-label">💬 情话时刻 💬</div>
+            <div class="romantic-text" id="romanticText">
+                何欣兰，你是我最珍贵的游戏奖励💕
+            </div>
+            <button class="btn-change-phrase" onclick="changePhrase()">换一句</button>
+        </div>
+
+        <!-- 操作按钮 -->
+        <div class="button-group">
+            <button class="btn btn-primary" onclick="resetGame()">🔄 重新开始</button>
+            <button class="btn btn-secondary" onclick="changePhrase()">❤️ 换情话</button>
+        </div>
+
+        <!-- 移动次数 -->
+        <div class="moves-display">
+            已消除方块: <span id="matchCount">0</span> 个 | 
+            总分数: <span id="totalScore">0</span>
+        </div>
+    </div>
+
+    <!-- 升级弹窗 -->
+    <div class="modal" id="levelUpModal">
+        <div class="modal-content">
+            <div class="modal-title">🎉 恭喜过关 🎉</div>
+            <div class="modal-subtitle">
+                你赢得了 <span id="modalScore">0</span> 分！
+            </div>
+            <div class="modal-phrase" id="modalPhrase">
+                何欣兰，你是我最珍贵的游戏奖励💕
+            </div>
+            <button class="btn btn-success" onclick="nextLevel()">下一关 →</button>
+            <button class="btn btn-outline" onclick="resetGame()">重新开始</button>
+        </div>
+    </div>
+
+    <!-- 提示信息 -->
+    <div class="tips">
+        <p>💡 <strong>游戏规则</strong>：点击一个方块，再点击相邻方块进行交换。三个或以上相同颜色的方块排成一行/列时会消除。</p>
+        <p>✨ 达到目标分数即可进入下一关。无限关卡，永不无聊！</p>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
