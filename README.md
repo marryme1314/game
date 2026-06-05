@@ -1,2 +1,3 @@
 # game
-to my girlfrienf
+to my girlfriend
+demo
